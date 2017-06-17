@@ -114,6 +114,29 @@
         Custom component that will be responsible for rendering the cell content while in view mode.<br>
         Type must be <span class="highlight">custom</span> in order for this to work.<br>
         You can see an <a class="source" href="https://github.com/akveo/ng2-smart-table/blob/master/src/app/pages/examples/custom-edit-view/advanced-example-custom-editor.component.ts">example here</a>
+
+        ViewCell add columnId property
+        <pre>
+import { Component, Input, OnInit } from '@angular/core';
+import { ViewCell } from 'ng2-smart-table';
+@Component({
+    template: `{{renderColumnId}}: {{renderValue}}`,
+})
+export class ColumnIdRenderComponent implements ViewCell, OnInit {
+    @Input() value: string | number;
+    @Input() rowData: any;
+    @Input() columnId: string;
+
+    renderValue: any;
+    renderColumnId: string;
+
+    ngOnInit() {
+        this.renderValue = this.value;
+        this.renderColumnId = this.columnId;    
+    }
+}
+
+        </pre>
       </td>
     </tr>
     <tr>
@@ -241,7 +264,7 @@
         Function run against a value before it gets inserted into a cell.
         You can use it to modify how a value is displayed in the cell.
         <br>
-        This function will be invoked with 2 parameters: cell, row
+        This function will be invoked with 3 parameters: cell, row, columnId
       </td>
     </tr>
     <tr>

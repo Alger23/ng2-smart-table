@@ -10,6 +10,10 @@ export const routes: Routes = [
     loadChildren: './demo/demo.module#DemoModule',
   },
   {
+    path: 'demo-column-id',
+    loadChildren: './demoColumnId/demo-column-id.module#DemoColumnIdModule',
+  },
+  {
     path: 'documentation',
     loadChildren: './documentation/documentation.module#DocumentationModule',
   },

@@ -13,7 +13,8 @@ export class CustomRenderComponent implements ViewCell, OnInit {
 
   @Input() value: string | number;
   @Input() rowData: any;
-
+  @Input() columnId: string;
+  
   ngOnInit() {
     this.renderValue = this.value.toString().toUpperCase();
   }

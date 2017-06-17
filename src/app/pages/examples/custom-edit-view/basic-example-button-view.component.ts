@@ -13,6 +13,7 @@ export class ButtonViewComponent implements ViewCell, OnInit {
 
   @Input() value: string | number;
   @Input() rowData: any;
+  @Input() columnId: string;
 
   @Output() save: EventEmitter<any> = new EventEmitter();
 
